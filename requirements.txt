@@ -3,5 +3,6 @@ easyocr
 numpy
 matplotlib
 opencv-python
+Jinja2
 Flask
 gunicorn 
