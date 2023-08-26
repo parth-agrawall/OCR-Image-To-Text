@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Image</title>
+</head>
+<body>
+    <h1>Processed Image with Text Detection</h1>
+    {% if image_data %}
+        <img src="data:image/png;base64,{{ image_data }}" alt="Processed Image">
+    {% else %}
+        <p>No image to display</p>
+    {% endif %}
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
