@@ -1,0 +1,7 @@
+Torch
+easyocr
+numpy
+matplotlib
+opencv-python
+Flask
+gunicorn 
