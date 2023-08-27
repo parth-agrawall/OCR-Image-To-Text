@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import cv2
 import io
 import base64
@@ -7,6 +7,7 @@ import numpy as np
 import easyocr
 
 app = Flask(__name__)
+reader = easyocr.Reader(['en'], gpu=True)
 
 @app.route('/')
 def index():
@@ -26,7 +27,6 @@ def process_image():
     image = cv2.imdecode(np.frombuffer(image_data, np.uint8), cv2.IMREAD_COLOR)
     # image = 
 
-    reader = easyocr.Reader(['en'], gpu=True)
     result = reader.readtext(image)
     
     for detection in result:
@@ -47,4 +47,4 @@ def process_image():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
