@@ -39,7 +39,7 @@ def process_image():
 
     # Convert the processed image to base64 for display
     _, buffer = cv2.imencode('.png', image)
-    print(_)
+    # print(_)
     image_base64 = base64.b64encode(buffer).decode('utf-8')
     
     return render_template('index.html', image_data=image_base64)
